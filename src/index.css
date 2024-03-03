@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: fugazOne;
+    src: url(./fonts/FugazOne-Regular.ttf);
+}
+
+.fugazOne{
+    font-family: fugazOne;
+}
+
+@font-face {
+    font-family: poppins;
+    src: url(./fonts/Poppins-Bold.ttf);
+}
+
+.poppins{
+    font-family: poppins;
+}
+
+@font-face {
+    font-family: poppins_extralight;
+    src: url(./fonts/Poppins-ExtraLight.ttf);
+}
+
+.poppins_extralight{
+    font-family: poppins_extralight;
+}
+
+@font-face {
+    font-family: poppins_semibold;
+    src: url(./fonts/Poppins-SemiBold.ttf);
+}
+
+.poppins_semibold{
+    font-family: poppins_semibold;
+}
+
+@font-face {
+    font-family: inter;
+    src: url(./fonts/Inter-SemiBold.ttf);
+}
+
+.inter{
+    font-family: inter;
+}
+
+.sidebackgroundLogin{
+    background-image: url(./assets/SideBackground-Login.jpg);
+}
