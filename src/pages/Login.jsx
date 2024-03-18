@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 //Designs
@@ -15,13 +15,18 @@ const Login = () => {
     const [userName, setUserName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    
+    useEffect(() => {
+        axios.post('https://9uh7ugfot9.execute-api.ap-southeast-1.amazonaws.com/dev/?x=5&y=8&op' )
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err))
+    }, []);
 
 
     const handleSubmit = (e) =>{
         e.preventDefault()
-        axios.post('http://localhost:3001/', {email, password})
+        axios.post('http://localhost:3001/', {email, password, userName})
         .then(result=>{
-            console.log(result)
             if (result.data === "Success"){
                 navigate('/home')
             }else if (result.data === "No record existed"){
@@ -67,7 +72,7 @@ const Login = () => {
                 <Card shadow={false}>
                 <form onSubmit={handleSubmit}>
                         <div className="w-96 ml-44 mt-5 bg-[#D9D9D9] rounded ">
-                            <Input label="Email" variant='outlined' className='rounded-2xl' color='black' onChange={(e) => {setEmail(e.target.value)}} />
+                            <Input label="Username or Email" variant='outlined' className='rounded-2xl' color='black' onChange={(e) => {setEmail(e.target.value), setUserName(e.target.value)}} />
                         </div>
                         <div className="w-96 ml-44 mt-5 bg-[#D9D9D9] rounded ">
                             <Input label="Password" variant='outlined' className='rounded-2xl' color='black' onChange={(e)=> {setPassword(e.target.value)}} />
